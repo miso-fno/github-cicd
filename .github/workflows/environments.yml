@@ -1,5 +1,5 @@
 name: Environment variables
-on push
+on: push
 jobs:
     run:
         runs-on: ubuntu-latest
@@ -9,4 +9,4 @@ jobs:
             - run: echo "${BRANCH}"
             - uses: actions/checkout@v4
               with:
-                  branch: ${{ env.BRANCH }}
+                  ref: ${{ env.BRANCH }}
